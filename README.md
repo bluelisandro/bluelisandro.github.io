@@ -49,14 +49,17 @@ Go to your Repository Settings > Secrets and Variables > Actions, and add the fo
 - `LIGHTSAIL_SSH_KEY`: The private SSH key content (open your `.pem` file and copy everything).
 
 ### 2. Lightsail Instance Setup (One-time)
-SSH into your Lightsail instance and run the following commands to prepare it:
+**Prerequisite:** When creating your instance, select **OS Only** > **Ubuntu 24.04 LTS**.
+
+SSH into your Lightsail instance (Username: `ubuntu`) and run the following commands to prepare it:
 
 ```bash
 # 1. Install Docker & Docker Compose
 sudo apt-get update
 sudo apt-get install -y docker.io docker-compose
 sudo usermod -aG docker $USER
-# (You may need to logout and log back in for group changes to take effect)
+# Activate the changes to groups without logging out:
+newgrp docker
 
 # 2. Create App Directory
 mkdir -p ~/app
