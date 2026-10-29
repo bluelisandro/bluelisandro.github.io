@@ -1,0 +1,301 @@
+/* Kawaii Catgirl Anime Style Portfolio - Purple & Pink Theme! (◕‿◕) ✨ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ffb6c1 0%, #e0b0ff 50%, #d8b4fe 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+}
+
+main {
+    background: linear-gradient(180deg, #fff0f5 0%, #f0e6ff 50%, #e6e6fa 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add cute floating particles */
+main::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(white 2px, transparent 0),
+        radial-gradient(white 2px, transparent 0),
+        radial-gradient(white 2px, transparent 0),
+        radial-gradient(white 2px, transparent 0),
+        radial-gradient(white 2px, transparent 0);
+    background-size: 100px 100px;
+    background-position: 0 0, 40px 60px, 80px 20px, 20px 80px, 60px 40px;
+    opacity: 0.3;
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-100px); }
+}
+
+.card {
+    background: linear-gradient(145deg, #fff5f8, #fce4ec, #f3e5f5);
+    width: 450px;
+    max-width: 90%;
+    text-align: center;
+    border-radius: 80px;
+    padding: 40px 30px;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+    box-shadow: 
+        0 10px 40px rgba(255, 105, 180, 0.3),
+        0 0 60px rgba(186, 85, 211, 0.2),
+        inset 0 1px 3px rgba(255, 255, 255, 0.8);
+    border: 4px solid #ff69b4;
+    position: relative;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Add cute corners */
+.card::before,
+.card::after {
+    content: '🌸';
+    position: absolute;
+    font-size: 30px;
+}
+
+.card::before {
+    top: -25px;
+    left: 20px;
+}
+
+.card::after {
+    bottom: -25px;
+    right: 20px;
+}
+
+/* Cat ears above the card! */
+.card .ears {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 60px;
+    z-index: -1;
+}
+
+.ears::before,
+.ears::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #ff69b4, #da70d6);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    border: 3px solid #c71585;
+}
+
+.ears::before {
+    left: -15px;
+    transform: rotate(-15deg);
+}
+
+.ears::after {
+    right: -15px;
+    transform: rotate(15deg);
+}
+
+.ears::before::after,
+.ears::after::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #ff1493;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.headshot {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 6px solid #ff69b4;
+    padding: 5px;
+    background: linear-gradient(145deg, #fff0f5, #ffe4e1);
+    box-shadow: 
+        0 5px 20px rgba(255, 105, 180, 0.4),
+        inset 0 2px 5px rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add cat face overlay */
+.headshot::after {
+    content: '😺';
+    position: absolute;
+    font-size: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 5px 10px rgba(255, 182, 193, 0.5));
+}
+
+.name {
+    color: #8b008b;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #da70d6, 0 0 20px #ff69b4; }
+    to { text-shadow: 0 0 20px #da70d6, 0 0 30px #ff1493; }
+}
+
+.bio {
+    color: #6a4c93;
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 15px;
+    padding: 15px;
+    background: linear-gradient(145deg, rgba(255, 240, 245, 0.9), rgba(255, 228, 225, 0.9));
+    border-radius: 30px;
+    border: 2px dashed #ff69b4;
+    box-shadow: 0 3px 10px rgba(255, 105, 180, 0.2);
+}
+
+/* Add sparkles around bio */
+.bio::before {
+    content: '✨';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.bio::after {
+    content: '✨';
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    font-size: 20px;
+}
+
+.links {
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.links a {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #ff69b4, #da70d6, #c71585);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+    box-shadow: 
+        0 5px 15px rgba(214, 112, 214, 0.4),
+        0 0 20px rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff;
+}
+
+.links a::before {
+    content: '🐱';
+    margin-right: 8px;
+}
+
+.links a:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 
+        0 8px 25px rgba(214, 112, 214, 0.6),
+        0 0 30px rgba(255, 105, 180, 0.5);
+    background: linear-gradient(145deg, #da70d6, #c71585, #ff1493);
+}
+
+.links a:active {
+    transform: scale(0.95) translateY(-1px);
+}
+
+/* Add floating decorations */
+.card .decoration {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.6;
+    animation: float 5s ease-in-out infinite;
+}
+
+.decoration-1 { top: -30px; right: -30px; animation-delay: 0s; }
+.decoration-2 { bottom: -30px; left: -30px; animation-delay: 2s; }
+.decoration-3 { top: 50%; left: -40px; font-size: 30px; animation-delay: 1s; }
+.decoration-4 { top: -40px; right: 50%; font-size: 25px; animation-delay: 3s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Cute footer */
+.card .footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #8b008b;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .card {
+        width: 95%;
+        padding: 30px 20px;
+    }
+    
+    .name {
+        font-size: 28px;
+    }
+    
+    .bio {
+        font-size: 18px;
+    }
+}
+
+/* Add rainbow border animation on hover */
+.card:hover {
+    animation: rainbow-border 2s linear infinite;
+}
+
+@keyframes rainbow-border {
+    0% { border-color: #ff69b4; }
+    20% { border-color: #da70d6; }
+    40% { border-color: #c71585; }
+    60% { border-color: #ff1493; }
+    80% { border-color: #ff69b4; }
+    100% { border-color: #da70d6; }
+}
