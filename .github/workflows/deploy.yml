@@ -5,6 +5,7 @@ on:
     branches:
       - 'main'
       - 'develop/v2'
+      - 'develop/portfolio-site-v3'
 
 env:
   REGISTRY: ghcr.io
