@@ -132,30 +132,41 @@ main::before {
     transform: translateX(-50%);
 }
 
-.headshot {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+/* Hero Image Styles - Coastal Vibe! (◕‿◕) ✨ */
+.hero-image {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50px 50px 20px 20px;
     border: 6px solid #ff69b4;
     padding: 5px;
     background: linear-gradient(145deg, #fff0f5, #ffe4e1);
     box-shadow: 
-        0 5px 20px rgba(255, 105, 180, 0.4),
+        0 8px 25px rgba(255, 105, 180, 0.5),
+        0 0 40px rgba(186, 85, 211, 0.3),
         inset 0 2px 5px rgba(255, 255, 255, 0.8);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     position: relative;
-    overflow: hidden;
+    animation: heroFloat 4s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
 
-/* Add cat face overlay */
-.headshot::after {
-    content: '😺';
-    position: absolute;
-    font-size: 100px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: drop-shadow(0 5px 10px rgba(255, 182, 193, 0.5));
+.hero-image:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0 10px 30px rgba(255, 105, 180, 0.7),
+        0 0 50px rgba(186, 85, 211, 0.5);
+}
+
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Hide the old cat face overlay since we're using a hero image */
+.headshot {
+    display: none;
 }
 
 .name {
